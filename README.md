@@ -1,6 +1,12 @@
 # WIP, do not just install this on your system please
 
+![nitch + wallpaper](./extra/showcase/nitch_and_wallpaper.png)
+![nvim](./extra/showcase/nvim.png) 
+![schizofox](./extra/showcase/schizofox.png)
+![vencord](./extra/showcase/vencord.png)
+
 ## TODO:
+
 - [ ] ideavimrc
 - [ ] vimrc
 - [ ] clipboard (cliphist / copyq)
