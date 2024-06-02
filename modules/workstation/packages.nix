@@ -77,7 +77,7 @@ in {
     cargo-watch
     rust-analyzer
     rustup
-    cargo
+    # cargo
     rustc
     rust-analyzer
     rustfmt
