@@ -29,7 +29,6 @@
     neovim-flake.url = "github:notashelf/nvf";
     hyprwm-contrib.url = "github:hyprwm/contrib";
     helix.url = "github:SoraTenshi/helix/new-daily-driver";
-    # walker.url = "github:abenz1267/walker";
   };
 
   outputs = inputs: let

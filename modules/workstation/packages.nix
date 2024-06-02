@@ -73,7 +73,6 @@ in {
     jetbrains.idea-ultimate
     jetbrains.rust-rover
     neovide
-    rustup
     pkg-config
     cargo
     rustc
