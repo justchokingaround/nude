@@ -83,7 +83,6 @@ in {
 
     # Text Editors
     zed-editor
-    nodePackages.prettier
 
     # Web Browsers
     ungoogled-chromium
