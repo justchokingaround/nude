@@ -1,0 +1,3 @@
+{...}: {
+  imports = [./stylix.nix];
+}
