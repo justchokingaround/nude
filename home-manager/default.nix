@@ -49,7 +49,7 @@ in {
   home = {
     username = "${values.mainUser}";
     homeDirectory = "/home/${values.mainUser}";
-    stateVersion = mkDefault "24.05";
+    stateVersion = mkDefault "23.11";
   };
 
   gtk = {

@@ -73,11 +73,9 @@ in {
     jetbrains.idea-ultimate
     jetbrains.rust-rover
     neovide
-    pkg-config
-    cargo-watch
-    rust-analyzer
     rustup
-    # cargo
+    pkg-config
+    cargo
     rustc
     rust-analyzer
     rustfmt
