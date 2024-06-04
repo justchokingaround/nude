@@ -134,5 +134,6 @@ in {
     # Miscellaneous Tools
     ollama
     tgpt
+    gimp
   ];
 }
