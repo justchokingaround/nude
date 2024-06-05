@@ -15,8 +15,8 @@
 
     nix-colors.url = "github:misterio77/nix-colors";
     stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:diniamo/stylix/custom";
+      inputs.nixpkgs.follows = "home-manager";
     };
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
