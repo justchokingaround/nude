@@ -74,11 +74,12 @@ in {
     jetbrains.rust-rover
     neovide
     pkg-config
-    cargo
-    rustc
-    rust-analyzer
-    rustfmt
-    clippy
+    # cargo
+    # rustc
+    # rust-analyzer
+    # rustfmt
+    # clippy
+    rustup
     gcc
 
     # Text Editors
@@ -96,6 +97,10 @@ in {
 
     # Communication
     telegram-desktop
+    iamb
+    discordo
+    nchat
+    neomutt
 
     # Clipboard Management
     wl-clipboard
@@ -132,6 +137,8 @@ in {
     openssl
 
     # Miscellaneous Tools
+    wezterm
+    cool-retro-term
     ollama
     tgpt
     gimp
