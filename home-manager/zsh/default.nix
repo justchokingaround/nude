@@ -95,6 +95,9 @@ in {
 
       # nvim
       nv = "nvim";
+
+      # discordo
+      dt = "discordo --token $(cat dox/dt.txt)";
     };
 
     plugins = with pkgs; [
