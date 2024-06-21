@@ -20,13 +20,15 @@
 in {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "${mod}, Return, exec, ${terminal}"
+      "${mod}, Return, exec, wezterm"
+      "${mod}, d, exec, cool-retro-term"
       "${alt}, Return, exec, ${terminal}"
       "${mod}, n, exec, neovide"
       "${mod}, b, exec, schizofox"
       "${mod}, c, killactive"
       "${mod}${secondary}, c, exec, kill -9 $(hyprctl -j activewindow | ${getExe pkgs.jq} -r '.pid')"
       "${mod}${ctrl}${secondary}, m, exit"
+      "${mod}${ctrl}${secondary}, b, exec, sh ~/.mye"
 
       "${mod}, Space, exec, anyrun"
       "${mod}, x, exec, wlogout --show-binds"
