@@ -27,6 +27,11 @@ in {
           smart-splits-nvim = {package = smart-splits-nvim;};
           dressing-nvim = {package = dressing-nvim;};
           firenvim = {package = firenvim;};
+          codeium-vim = {package = codeium-vim;};
+          octo-nvim = {package = octo-nvim;};
+          vim-test = {package = vim-test;};
+          vimux = {package = vimux;};
+          vimtex = {package = vimtex;};
         };
         maps = {
           normal = {
@@ -59,6 +64,7 @@ in {
             "<leader>gb".action = "<cmd>Gitsigns blame_line<CR>";
             "<leader>gD".action = "<cmd>Gitsigns diffthis HEAD<CR>";
             "<leader>gw".action = "<cmd>Gitsigns toggle_word_diff<CR>";
+            "<leader>go".action = "<cmd>Octo actions<CR>";
 
             # Smart splits
             "<A-h>".action = ":lua require('smart-splits').resize_left()<CR>";
@@ -77,6 +83,13 @@ in {
             "<Tab>".action = ":BufferLineCycleNext<CR>";
             "<S-Tab>".action = ":BufferLineCyclePrev<CR>";
             "K".action = ":lua vim.lsp.buf.hover()<CR>";
+
+            # Vim-test
+            ",tf".action = ":TestFile<CR>";
+            ",ts".action = ":TestSuite<CR>";
+            ",tl".action = ":TestLast<CR>";
+            ",tv".action = ":TestVisit<CR>";
+            ",tn".action = ":TestNearest<CR>";
 
             # Hop
             "<leader>w".action = ":HopWord<CR>";
@@ -194,7 +207,7 @@ in {
         };
 
         presence.neocord = {
-          enable = true;
+          enable = false;
           logo_tooltip = "The Superior Text Editor";
           # client_id = "793271441293967371";
           client_id = "1226192546120732815";
@@ -365,8 +378,8 @@ in {
 
         assistant = {
           copilot = {
-            enable = true;
-            cmp.enable = true;
+            enable = false;
+            cmp.enable = false;
           };
         };
 
