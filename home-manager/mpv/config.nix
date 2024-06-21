@@ -3,7 +3,7 @@
     config = {
       fullscreen = true;
       no-keepaspect-window = "";
-      save-position-on-quit = "";
+      # save-position-on-quit = "";
       no-window-dragging = "";
 
       ytdl-format = "bestvideo[height<=?1080]+bestaudio/best";
