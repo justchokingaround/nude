@@ -11,7 +11,6 @@
     plugins = with pkgs.tmuxPlugins; [
       better-mouse-mode
       vim-tmux-navigator
-      tmux-thumbs
       continuum
       resurrect
     ];
@@ -22,6 +21,7 @@
       set -ga terminal-overrides ",*256col*:Tc"
       set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
       set-environment -g COLORTERM "truecolor"
+      set -g detach-on-destroy off
 
       # extend scrollback
       set-option -g history-limit 5000
@@ -33,6 +33,10 @@
       bind-key -T copy-mode-vi v send-keys -X begin-selection
       bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
       bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
+      # refresh config
+      unbind r
+      bind r source-file ~/.config/tmux/tmux.conf
 
       # Mouse works as expected
       set-option -g mouse on
@@ -65,6 +69,12 @@
           --bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
           --bind 'ctrl-d:execute(tmux kill-session -t {})+change-prompt(⚡  )+reload(sesh list)'
       )\""
+
+      # resurrect and continuum
+      set -g @resurrect-dir $HOME/.config/tmux/resurrect
+      set -g @ressurect-strategy-nvim 'session'
+      set -g @continuum-restore 'on'
+      set -g @continuum-save-interval '60' # minutes
 
     '';
   };
