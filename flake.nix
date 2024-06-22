@@ -11,6 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # nixpkgs is only used for tests, so no don't need to follow it here
+    # mhm
     wrapper-manager.url = "github:viperML/wrapper-manager";
 
     nix-colors.url = "github:misterio77/nix-colors";
@@ -20,6 +21,10 @@
     };
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     anyrun.url = "github:Kirottu/anyrun";
 
     schizofox.url = "github:schizofox/schizofox";
@@ -29,6 +34,16 @@
     neovim-flake.url = "github:notashelf/nvf";
     hyprwm-contrib.url = "github:hyprwm/contrib";
     helix.url = "github:SoraTenshi/helix/new-daily-driver";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.flake-parts.follows = "flake-parts";
+    };
   };
 
   outputs = inputs: let

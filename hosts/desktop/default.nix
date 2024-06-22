@@ -5,6 +5,7 @@ in {
 
   modules = {
     boot.windows_entry = true;
+    gaming.enable = true;
   };
 
   home-manager.users.${values.mainUser} = {
