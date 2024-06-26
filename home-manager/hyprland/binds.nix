@@ -34,7 +34,8 @@ in {
       "${mod}, x, exec, wlogout --show-binds"
       # TODO: cliphist
 
-      "${mod}, m, exec, ${terminal} pulsemixer"
+      "${shift}${mod}, m, exec, ${terminal} pulsemixer"
+      "${mod}, m, exec, lobster -i --rofi"
       "${mod}, q, exec, ${terminal} -- qalc"
       "${mod}, e, exec, ${terminal} -- yazi"
       "${mod}, g, exec, ${scripts.rofiGpt}"
