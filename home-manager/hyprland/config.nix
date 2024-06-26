@@ -101,8 +101,19 @@ in {
         "minsize 1 1, title:^()$, class:^(steam)$"
       ];
     };
-    plugins = [
-      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-    ];
+    # plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [
+    # borders-plus-plus
+    # csgo-vulkan-fix
+    # hyprwinwrap
+    # ];
+    extraConfig = ''
+      plugin {
+        csgo-vulkan-fix {
+          res_w = 1280
+          res_h = 1024
+          class = cs2
+        }
+      }
+    '';
   };
 }
