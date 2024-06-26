@@ -41,6 +41,7 @@ in {
     ./tmux.nix
     # ./walker.nix
     ./rofi.nix
+    ./ncmpcpp.nix
 
     inputs.nix-colors.homeManagerModules.default
   ];
