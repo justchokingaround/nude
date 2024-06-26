@@ -18,6 +18,8 @@ in {
     enable = true;
     settings = {
       vim = {
+        viAlias = false;
+        vimAlias = false;
         lineNumberMode = "none";
         package = pkgs.neovim-unwrapped;
         extraPlugins = with pkgs.vimPlugins; {

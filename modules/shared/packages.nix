@@ -18,5 +18,6 @@
     gh
     nh
     nix-tree
+    vim
   ];
 }
