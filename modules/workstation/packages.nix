@@ -94,6 +94,8 @@ in {
     spotify-player
     obs-studio
     chafa
+    ffmpeg
+    invidtui
 
     # Communication
     telegram-desktop
@@ -101,6 +103,7 @@ in {
     discordo
     nchat
     neomutt
+    element-desktop
 
     # Clipboard Management
     wl-clipboard
