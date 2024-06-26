@@ -16,9 +16,10 @@ in {
     # ./lazyvim
     ./neovim-flake
     ./zsh
+
+    ./ags.nix
     ./zathura.nix
     ./bat.nix
-
     ./xdg.nix
     ./foot.nix
     ./schizofox.nix
