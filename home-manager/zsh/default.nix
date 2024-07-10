@@ -80,7 +80,8 @@ in {
       "jj" = "cd -";
 
       # eza
-      ls = "eza --git --icons --color=auto --group-directories-first";
+      sl = "eza --git --icons --color=auto --group-directories-first";
+      ls = "${lib.getExe pkgs.sl}";
       l = "ls -lh --time-style=long-iso";
       ll = "l -a";
       la = "ls -a";
