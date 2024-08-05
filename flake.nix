@@ -4,11 +4,13 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     # nixpkgs-small.url = "github:NixOS/nixpkgs/nixos-unstable-small";
-    nur.url = "github:nix-community/nur";
+    nur = {
+      url = "github:nix-community/nur";
+    };
 
     home-manager = {
-      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager";
     };
     # nixpkgs is only used for tests, so no don't need to follow it here
     # mhm
@@ -50,6 +52,18 @@
     };
     ags = {
       url = "github:Aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Secrets management
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # snap
+    nix-snapd = {
+      url = "github:nix-community/nix-snapd";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
