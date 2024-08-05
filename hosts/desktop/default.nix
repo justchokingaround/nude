@@ -25,15 +25,12 @@ in {
         "8, monitor:DP-2"
         "9, monitor:DP-2"
       ];
-      windowrule = [
-        "workspace 1, vesktop"
-      ];
-      exec-once = ["vesktop"];
     };
   };
 
   networking.networkmanager.enable = true;
   networking.hostName = "${values.mainUser}";
+
   boot.tmp.useTmpfs = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
