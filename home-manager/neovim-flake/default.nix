@@ -34,6 +34,7 @@ in {
           vim-test = {package = vim-test;};
           vimux = {package = vimux;};
           vimtex = {package = vimtex;};
+          gruber-darker-nvim = {package = gruber-darker-nvim;};
         };
         maps = {
           normal = {
@@ -201,12 +202,12 @@ in {
           colorizer.enable = true;
         };
 
-        theme = {
-          enable = true;
-          name = "oxocarbon";
-          style = "dark";
-          transparent = false;
-        };
+        # theme = {
+        #   enable = true;
+        # name = "oxocarbon";
+        #   style = "dark";
+        #   transparent = false;
+        # };
 
         presence.neocord = {
           enable = false;
@@ -229,9 +230,6 @@ in {
           fidget-nvim.enable = true;
           indentBlankline = {
             enable = true;
-            fillChar = null;
-            eolChar = null;
-            scope = {enabled = true;};
           };
         };
 
@@ -298,12 +296,12 @@ in {
           gitsigns.enable = true;
         };
 
-        statusline = {
-          lualine = {
-            enable = true;
-            theme = "oxocarbon";
-          };
-        };
+        # statusline = {
+        #   lualine = {
+        #     enable = true;
+        #     theme = "oxocarbon";
+        #   };
+        # };
 
         lsp = {
           formatOnSave = true;
@@ -338,14 +336,14 @@ in {
           go.enable = true;
           zig.enable = true;
           python.enable = true;
-          dart.enable = true;
+          dart.enable = false;
 
           bash = {
             enable = true;
             format.enable = true; # FIXME: custom shfmt flags
           };
           markdown.enable = true;
-          tailwind.enable = true;
+          tailwind.enable = false;
           lua = {
             enable = true;
             lsp.neodev.enable = true;

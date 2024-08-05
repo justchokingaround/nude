@@ -84,3 +84,4 @@ vim.api.nvim_set_hl(0, "DiffChange", { bg = "#161616" })
 vim.api.nvim_set_hl(0, "DiffText", { bg = "#161616" })
 
 vim.g["test#strategy"] = "vimux"
+vim.cmd [[colorscheme gruber-darker]]
