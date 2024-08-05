@@ -97,5 +97,3 @@ chst() {
   [ -z "$*" ] && printf "Enter a command name: " && read -r cmd || cmd=$*
   curl -s cheat.sh/$cmd|bat --style=plain
 }
-
-# create a directo
