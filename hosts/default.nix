@@ -1,4 +1,8 @@
-{lib', ...}: let
+{
+  lib',
+  inputs,
+  ...
+}: let
   inherit (lib') mkNixosSystem;
 
   modulePath = ../modules;
@@ -12,6 +16,10 @@ in {
   desktop = mkNixosSystem {
     system = "x86_64-linux";
     modules = [
+      inputs.nix-snapd.nixosModules.default
+      {
+        services.snap.enable = true;
+      }
       ./desktop
       shared
       workstation
