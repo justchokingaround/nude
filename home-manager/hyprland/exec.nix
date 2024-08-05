@@ -3,11 +3,13 @@
 in {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "swww kill ; swww init"
-      "swww img ~/nude/modules/shared/wallpapers/cyberpunk-ed.jpg --transition-type random --transition-step 5 --transition-fps 165"
-      "vesktop"
+      "pgrep waybar || waybar &"
+      "foot --server &"
+      "swww-daemon --format xrgb"
+      "wl-paste --type text --watch cliphist store &"
+      "wl-paste --type image --watch cliphist store &"
       "[workspace 2] schizofox"
-      "${scripts.socket}"
+      # "${scripts.socket}"
     ];
   };
 }
