@@ -30,39 +30,24 @@ in {
       "${mod}${ctrl}${secondary}, m, exit"
       "${mod}${ctrl}${secondary}, b, exec, sh ~/.mye"
 
-      "${mod}, Space, exec, anyrun"
+      "${mod}, Space, exec, pkill rofi || rofi -show drun"
+      "${mod}${shift}, w, exec, rofi -theme preview -show filebrowser -selected-row 1"
       "${mod}, x, exec, wlogout --show-binds"
-      # TODO: cliphist
+      "${mod}${shift}, v, exec, ${scripts.clipShow}"
 
-      "${shift}${mod}, m, exec, ${terminal} pulsemixer"
+      "${shift}${mod}, m, exec, ${terminal} -a quick pulsemixer"
       "${mod}, m, exec, lobster -i --rofi"
-      "${mod}, q, exec, ${terminal} -- qalc"
+      # "${mod}, q, exec, ${terminal} -a quick -- qalc"
+      "${mod}, q, exec, rofi -show calc -modi calc -no-show-math -no-sort -calc-command 'echo '{result}' | wl-copy'"
       "${mod}, e, exec, ${terminal} -- yazi"
       "${mod}, g, exec, ${scripts.rofiGpt}"
       "${mod}${secondary}, e, exec, nautilus"
       "${mod}${shift}, x, exec, hyprpicker"
 
-      ", Print, exec, grimblast --notify copy output"
-      "${shift}, Print, exec, grimblast --notify --freeze copy area"
-      "${alt}, Print, exec, grimblast --notify copy active"
-
-      ", XF86AudioPrev, exec, ${playerctl} previous"
-      ", XF86AudioNext, exec, ${playerctl} next"
-      # The stop function is pretty much useless, use it to restart the playing media instead
-      ", XF86AudioStop, exec, ${playerctl} position 0"
-      ", XF86AudioPlay, exec, ${playerctl} play-pause"
-
-      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-
       "${mod}, h, movefocus, l"
       "${mod}, j, movefocus, d"
       "${mod}, k, movefocus, u"
       "${mod}, l, movefocus, r"
-
-      "${mod}${shift}, h, movewindow, l"
-      "${mod}${shift}, j, movewindow, d"
-      "${mod}${shift}, k, movewindow, u"
-      "${mod}${shift}, l, movewindow, r"
 
       "${mod}, 1, workspace, 1"
       "${mod}, 2, workspace, 2"
@@ -74,6 +59,8 @@ in {
       "${mod}, 8, workspace, 8"
       "${mod}, 9, workspace, 9"
       "${mod}, s, togglespecialworkspace,"
+      "${mod}${shift}, 1, togglespecialworkspace, matrix"
+      "${mod}${shift}, 2, togglespecialworkspace, music"
 
       "${alt}, 1, movetoworkspace, 1"
       "${alt}, 2, movetoworkspace, 2"
@@ -85,33 +72,47 @@ in {
       "${alt}, 8, movetoworkspace, 8"
       "${alt}, 9, movetoworkspace, 9"
       "${alt}, s, movetoworkspace, special"
+      "${mod}${ctrl}, 1, movetoworkspacesilent, special:matrix"
+      "${mod}${ctrl}, 2, movetoworkspacesilent, special:music"
 
-      "${mod}${shift}, 1, movetoworkspacesilent, 1"
-      "${mod}${shift}, 2, movetoworkspacesilent, 2"
-      "${mod}${shift}, 3, movetoworkspacesilent, 3"
-      "${mod}${shift}, 4, movetoworkspacesilent, 4"
-      "${mod}${shift}, 5, movetoworkspacesilent, 5"
-      "${mod}${shift}, 6, movetoworkspacesilent, 6"
-      "${mod}${shift}, 7, movetoworkspacesilent, 7"
-      "${mod}${shift}, 8, movetoworkspacesilent, 8"
-      "${mod}${shift}, 9, movetoworkspacesilent, 9"
-
-      "${mod}, 49, togglegroup,"
-      "${mod}, tab, changegroupactive,"
+      # "${mod}, 49, togglegroup,"
+      # "${mod}, tab, changegroupactive,"
+      "${mod}, Tab, cyclenext,"
+      "${mod}, Tab, bringactivetotop,"
 
       "${mod}, v, togglefloating"
-      "${mod}, p, exec, ${scripts.pin}"
       "${mod}, f, fullscreen, 1"
       "${mod}${shift}, f, fullscreen, 0"
     ];
+    # bindr = ["SUPER, SUPER_L, exec, pkill rofi || rofi -show drun"];
     binde = [
       "${mod}${ctrl}, h, resizeactive, -50 0"
       "${mod}${ctrl}, j, resizeactive, 0 50"
       "${mod}${ctrl}, k, resizeactive, 0 -50"
       "${mod}${ctrl}, l, resizeactive, 50 0"
 
-      ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-      ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      "${mod}${shift}, h, movewindow, l"
+      "${mod}${shift}, j, movewindow, d"
+      "${mod}${shift}, k, movewindow, u"
+      "${mod}${shift}, l, movewindow, r"
+    ];
+    bindel = [
+      ", Print, exec, grimblast --notify copy output"
+      "${shift}, Print, exec, grimblast --notify --freeze copy area"
+      "${alt}, Print, exec, grimblast --notify copy active"
+      "${mod}, Print, exec, grimblast --notify edit area"
+
+      ", XF86AudioPrev, exec, ${playerctl} previous"
+      ", XF86AudioNext, exec, ${playerctl} next"
+      ", XF86AudioStop, exec, ${playerctl} position 0"
+      ", XF86AudioPlay, exec, ${playerctl} play-pause"
+
+      "${mod}${shift}, d, exec, ${playerctl} next --player=spotify_player"
+      "${mod}${shift}, a, exec, ${playerctl} previous --player=spotify_player"
+      "${mod}${shift}, s, exec, ${playerctl} play-pause --player=spotify_player"
+
+      ",XF86AudioRaiseVolume, exec, pulsemixer --change-volume +5"
+      ",XF86AudioLowerVolume, exec, pulsemixer --change-volume -5"
     ];
     bindm = [
       "${mod}, mouse:272, movewindow"
