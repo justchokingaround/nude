@@ -5,17 +5,17 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "fonts";
-  version = "1";
+  version = "2";
 
   src = fetchzip {
-    url = "https://github.com/justchokingaround/fonts/archive/refs/tags/1.zip";
+    url = "https://github.com/justchokingaround/fonts/archive/refs/tags/2.zip";
     stripRoot = false;
-    hash = "sha256-TEpB9LiGy4XkGjXsOsjhJQDrPHOuSs33XODPZ+I5IfM=";
+    hash = "sha256-Xr1GkfobeVZ936ctPVtO9G6/wjpCyzrphByUM1fbuGI=";
   };
 
   installPhase = ''
     mkdir -p $out/share/fonts
-    install -Dm444 fonts-1/* $out/share/fonts/
+    install -Dm444 fonts-2/* $out/share/fonts/
   '';
   meta = with lib; {
     description = "my fonts";

@@ -4,6 +4,19 @@
   pkgs,
   ...
 }: {
+  # sops = {
+  #   defaultSopsFile = ../../../secrets/secrets.yaml;
+  #   defaultSopsFormat = "yaml";
+  #   age.sshKeyPaths = ["/home/${config.values.mainUser}/.ssh/private"];
+  #   secrets = {
+  #     root_pass.neededForUsers = true;
+  #     user_pass.neededForUsers = true;
+  #     vpn_private_jp = {};
+  #     vpn_private_us = {};
+  #     vpn_private_nl = {};
+  #   };
+  # };
+
   nix = {
     settings = {
       accept-flake-config = true;
@@ -40,6 +53,6 @@
 
   users.users.${config.values.mainUser} = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = ["networkmanager" "wheel" "docker" "nordvpn"];
   };
 }

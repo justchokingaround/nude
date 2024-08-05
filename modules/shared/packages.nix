@@ -19,5 +19,6 @@
     nh
     nix-tree
     vim
+    unzip
   ];
 }

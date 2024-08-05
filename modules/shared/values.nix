@@ -10,7 +10,7 @@ in {
     terminal = mkOption {
       description = "The terminal command to run";
       type = types.str;
-      default = "foot";
+      default = "footclient";
     };
   };
 }
