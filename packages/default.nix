@@ -18,6 +18,8 @@
   mkPackage = path: pkgs.callPackage path {};
   mkMpvPackage = path: pkgs.mpvScripts.callPackage path {};
 in {
+  spotify-player = mkPackage ./derivations/spotify-player.nix;
+  kew = mkPackage ./derivations/kew.nix;
   bencode-pretty = mkPackage ./derivations/bencode-pretty.nix;
   phocus-oxocarbon = mkPackage ./derivations/phocus-oxocarbon.nix;
   win11-icon-theme = mkPackage ./derivations/win11-icon-theme.nix;
