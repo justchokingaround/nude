@@ -192,7 +192,7 @@ in {
     };
 
     search = {
-      defaultSearchEngine = "SearXNG";
+      defaultSearchEngine = "Perplexity";
       removeEngines = ["Bing" "Amazon.com" "eBay" "Twitter" "Wikipedia"];
       addEngines = [
         {
@@ -200,6 +200,12 @@ in {
           Description = "SearXNG";
           Method = "GET";
           URLTemplate = "https://search.notashelf.dev/search?q={searchTerms}";
+        }
+        {
+          Name = "Startpage";
+          Description = "Startpage";
+          Method = "GET";
+          URLTemplate = "https://www.startpage.com/sp/search?query={searchTerms}";
         }
         {
           Name = "Yandex";
@@ -216,7 +222,7 @@ in {
           URLTemplate = "https://www.google.com/search?q={searchTerms}";
         }
         {
-          Name = "pp";
+          Name = "Perplexity";
           Description = "Perplexity";
           Alias = "!pe";
           Method = "GET";
@@ -357,6 +363,7 @@ in {
       "dom.event.clipboardevents.enabled" = true; # fixes clipboard issues
       "browser.startup.page" = 3; # restore previous session automatically
       "dom.event.contextmenu.enabled" = true; # fixes yt right click
+      "privacy.resistFingerprinting" = false;
     };
 
     extensions = {
@@ -377,7 +384,7 @@ in {
         "youtube-enhancer@VampireChicken".install_url = mkUrl "youtube-enhancer-vc";
         "{a4c4eda4-fb84-4a84-b4a1-f7c1cbf2a1ad}".install_url = mkUrl "refined-github-";
         "1018e4d6-728f-4b20-ad56-37578a4de76".install_url = mkUrl "flagfox";
-        "falling-metal-pipe@swantzter.com".install_url = mkUrl "falling-metal-pipe";
+        # "falling-metal-pipe@swantzter.com".install_url = mkUrl "falling-metal-pipe";
       };
     };
   };

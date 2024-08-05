@@ -42,6 +42,10 @@ in {
     # ./walker.nix
     ./rofi.nix
     ./ncmpcpp.nix
+    ./iamb.nix
+    ./spotify-player.nix
+    ./satty.nix
+    ./waybar.nix
 
     inputs.nix-colors.homeManagerModules.default
   ];

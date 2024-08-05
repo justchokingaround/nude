@@ -13,10 +13,8 @@ in {
       main = {
         term = "xterm-256color";
         selection-target = "clipboard";
-        font = lib.mkForce "Liga SFMono Nerd Font:size=16";
+        font = lib.mkForce "Martian Mono:size=16";
         pad = "30x30";
-        dpi-aware = "no";
-        notify = "${pkgs.libnotify}/bin/notify-send -a foot -i foot \${title} \${body}";
       };
       url.launch = "${pkgs.xdg-utils}/bin/xdg-open \${url}";
       scrollback = {
