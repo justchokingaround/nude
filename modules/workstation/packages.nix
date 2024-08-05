@@ -18,8 +18,20 @@
       }
     ];
   };
+
+  customInvidtui = pkgs.invidtui.overrideAttrs (oldAttrs: {
+    postPatch =
+      oldAttrs.postPatch
+      + ''
+        substituteInPlace cmd/flags.go \
+          --replace "\"${pkgs.lib.getBin pkgs.mpv}/bin/mpv\"" "\"${config.home-manager.users.chomsky.programs.mpv.package}/bin/mpv\""
+      '';
+  });
 in {
-  imports = [inputs.hyprland.nixosModules.default];
+  imports = [
+    inputs.hyprland.nixosModules.default
+  ];
+  # sops.secrets.nord-vpn.sopsFile = ../../secrets/secrets.yaml;
 
   programs = {
     hyprland.enable = true;
@@ -53,7 +65,13 @@ in {
   users.users.${values.mainUser}.shell = config.home-manager.users.${values.mainUser}.programs.zsh.package;
   # For electron apps
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  nixpkgs.config = {allowUnfree = true;};
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "kew"
+      "freeimage-unstable-2021-11-01"
+    ];
+  };
 
   fonts.packages = with pkgs; [
     inter
@@ -74,12 +92,12 @@ in {
     jetbrains.rust-rover
     neovide
     pkg-config
-    # cargo
-    # rustc
-    # rust-analyzer
-    # rustfmt
-    # clippy
-    rustup
+    cargo
+    rustc
+    rust-analyzer
+    rustfmt
+    clippy
+    # rustup
     gcc
 
     # Text Editors
@@ -91,19 +109,20 @@ in {
 
     # Multimedia
     spotify
-    spotify-player
+    # spotify-player
     obs-studio
     chafa
     ffmpeg
-    invidtui
+    customInvidtui
+    # customPkgs.kew
 
     # Communication
     telegram-desktop
-    iamb
     discordo
     nchat
     neomutt
     element-desktop
+    cinny-desktop
 
     # Clipboard Management
     wl-clipboard
@@ -116,6 +135,9 @@ in {
     # Office Suites
     libreoffice
 
+    # Epub Reader
+    librum
+
     # Audio Tools
     pulsemixer
 
@@ -123,13 +145,13 @@ in {
     yt-dlp
 
     # Terminal Utilities
-    fzf
     lazygit
     libqalculate
     libnotify
 
     # Networking
     mitmproxy
+    # config.nur.repos.LuisChDev.nordvpn
 
     # Virtualization
     quickemu
@@ -139,11 +161,33 @@ in {
     xdragon
     openssl
 
+    # Passwords
+    sops
+    bitwarden-cli
+
+    # Torrenting
+    qbittorrent
+    # transmission_4-gtk
+    aria2
+
+    # Gaming
+    heroic
+    lutris
+    protonup-qt
+
+    # Remarkable Table
+    restream
+
+    # Blog
+    surge-cli
+    zola
+
     # Miscellaneous Tools
     wezterm
     cool-retro-term
     ollama
     tgpt
     gimp
+    appimage-run
   ];
 }
