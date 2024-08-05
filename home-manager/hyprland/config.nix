@@ -46,13 +46,10 @@ in {
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
-        disable_autoreload = true;
-
-        mouse_move_enables_dpms = false;
-        key_press_enables_dpms = true;
 
         new_window_takes_over_fullscreen = 1;
-        focus_on_activate = 1;
+        enable_swallow = true;
+        swallow_regex = "^(foot).*$";
       };
       decoration = {
         rounding = 10;
@@ -65,7 +62,7 @@ in {
         shadow_offset = "0 0";
       };
       animations = {
-        enabled = true;
+        enabled = false;
 
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.1";
 
@@ -82,10 +79,14 @@ in {
       };
       dwindle = {
         no_gaps_when_only = false;
-        pseudotile = true;
+        pseudotile = false;
         force_split = 2;
         preserve_split = true;
       };
+      workspace = [
+        "special:music, on-created-empty:footclient spotify_player"
+        "special:matrix, on-created-empty:footclient iamb"
+      ];
       windowrule = [
         "pin, dragon-drop"
         "float, SVPManager"
@@ -93,12 +94,24 @@ in {
         "tile, resolve"
         "float, title:resolve"
         "float, title:Open Folder"
-
-        "idleinhibit always, org.qbittorrent.qBittorrent"
       ];
       windowrulev2 = [
-        "stayfocused, title:^()$, class:^(steam)$"
-        "minsize 1 1, title:^()$, class:^(steam)$"
+        "stayfocused, title:^()$,class:^(steam)$"
+        "minsize 1 1, title:^()$,class:^(steam)$"
+        "float, class:io.github.Qalculate.qalculate-qt"
+        "size 70% 55%, class:io.github.Qalculate.qalculate-qt"
+        "center, class:io.github.Qalculate.qalculate-qt"
+        "float, class:quick"
+        "size 80% 75%, class:quick"
+        "center, class:quick"
+        "size 85% 80%, class:com.gabm.satty"
+        "center, class:com.gabm.satty"
+        "center, class:pop"
+        "tile, class:Nsxiv,xwayland:1"
+        "tile, title:Neovide,class:neovide"
+      ];
+      layerrule = [
+        "noanim, selection"
       ];
     };
     # plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [
