@@ -99,6 +99,11 @@ in {
     clippy
     # rustup
     gcc
+    just
+    go
+    neovim
+    vscode-extensions.vadimcn.vscode-lldb.adapter
+    file
 
     # Text Editors
     zed-editor
@@ -181,6 +186,9 @@ in {
     # Blog
     surge-cli
     zola
+
+    # Virtualization
+    spice
 
     # Miscellaneous Tools
     wezterm
