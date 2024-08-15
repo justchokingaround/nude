@@ -104,6 +104,7 @@ in {
     neovim
     vscode-extensions.vadimcn.vscode-lldb.adapter
     file
+    glow
 
     # Text Editors
     zed-editor
