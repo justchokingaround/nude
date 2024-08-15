@@ -38,6 +38,7 @@
     jerry.url = "github:justchokingaround/jerry";
     lobster.url = "github:justchokingaround/lobster";
     neovim-flake.url = "github:notashelf/nvf";
+
     hyprwm-contrib.url = "github:hyprwm/contrib";
     helix.url = "github:SoraTenshi/helix/new-daily-driver";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
