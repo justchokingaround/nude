@@ -24,7 +24,7 @@
 
 ## Credits:
 
+- My config is almost entirely based on an old commit of [diniamo](https://github.com/diniamo/niqs)'s dotfiles, which are now way better
 - [raf](https://github.com/NotAShelf/nyx)
-- [diniamo](https://github.com/diniamo/niqs)
 - [zen](https://github.com/71zenith/nix-dots/)
 - [shaunsingh](https://github.com/shaunsingh/nix-darwin-dotfiles)
