@@ -15,7 +15,7 @@ in {
   # imports = [inputs.neovim-flake.${pkgs.hostPlatform.system}.maximal];
 
   programs.neovim-flake = {
-    enable = true;
+    enable = false;
     settings = {
       vim = {
         viAlias = false;
@@ -23,10 +23,8 @@ in {
         lineNumberMode = "none";
         package = pkgs.neovim-unwrapped;
         extraPlugins = with pkgs.vimPlugins; {
-          harpoon = {package = harpoon;};
           luasnip = {package = luasnip;};
           markdown-preview-nvim = {package = markdown-preview-nvim;};
-          smart-splits-nvim = {package = smart-splits-nvim;};
           dressing-nvim = {package = dressing-nvim;};
           firenvim = {package = firenvim;};
           codeium-vim = {package = codeium-vim;};
@@ -35,6 +33,9 @@ in {
           vimux = {package = vimux;};
           vimtex = {package = vimtex;};
           gruber-darker-nvim = {package = gruber-darker-nvim;};
+          undotree = {package = undotree;};
+          tmux-nvim = {package = tmux-nvim;};
+          harpoon = {package = harpoon2;};
         };
         maps = {
           normal = {
@@ -69,16 +70,6 @@ in {
             "<leader>gw".action = "<cmd>Gitsigns toggle_word_diff<CR>";
             "<leader>go".action = "<cmd>Octo actions<CR>";
 
-            # Smart splits
-            "<A-h>".action = ":lua require('smart-splits').resize_left()<CR>";
-            "<A-j>".action = ":lua require('smart-splits').resize_down()<CR>";
-            "<A-k>".action = ":lua require('smart-splits').resize_up()<CR>";
-            "<A-l>".action = ":lua require('smart-splits').resize_right()<CR>";
-            "<C-h>".action = ":lua require('smart-splits').move_cursor_left()<CR>";
-            "<C-j>".action = ":lua require('smart-splits').move_cursor_down()<CR>";
-            "<C-k>".action = ":lua require('smart-splits').move_cursor_up()<CR>";
-            "<C-l>".action = ":lua require('smart-splits').move_cursor_right()<CR>";
-
             # QOL
             "<Esc>".action = ":noh<CR>";
             "<leader>bd".action = ":bd<CR>";
@@ -86,6 +77,7 @@ in {
             "<Tab>".action = ":BufferLineCycleNext<CR>";
             "<S-Tab>".action = ":BufferLineCyclePrev<CR>";
             "K".action = ":lua vim.lsp.buf.hover()<CR>";
+            "<leader>u".action = ":UndotreeToggle<CR>";
 
             # Vim-test
             ",tf".action = ":TestFile<CR>";
@@ -281,7 +273,7 @@ in {
 
         notes = {
           todo-comments.enable = true;
-          obsidian.enable = true;
+          obsidian.enable = false;
         };
 
         terminal = {
@@ -296,12 +288,12 @@ in {
           gitsigns.enable = true;
         };
 
-        # statusline = {
-        #   lualine = {
-        #     enable = true;
-        #     theme = "oxocarbon";
-        #   };
-        # };
+        statusline = {
+          lualine = {
+            enable = true;
+            # theme = "oxocarbon";
+          };
+        };
 
         lsp = {
           formatOnSave = true;

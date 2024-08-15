@@ -1,6 +1,7 @@
 -- disables "how to disable mouse" message
 -- in right click popups
 vim.cmd.aunmenu [[PopUp.How-to\ disable\ mouse]]
+
 vim.cmd.aunmenu [[PopUp.-1-]]
 local opt = vim.opt
 
@@ -82,6 +83,7 @@ vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#0A2B2B" })
 vim.api.nvim_set_hl(0, "DiffDelete", { fg = "#393939", bg = "#161616" })
 vim.api.nvim_set_hl(0, "DiffChange", { bg = "#161616" })
 vim.api.nvim_set_hl(0, "DiffText", { bg = "#161616" })
+
 
 vim.g["test#strategy"] = "vimux"
 vim.cmd [[colorscheme gruber-darker]]
