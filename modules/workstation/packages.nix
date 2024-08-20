@@ -91,12 +91,12 @@ in {
     jetbrains.idea-ultimate
     jetbrains.rust-rover
     neovide
-    pkg-config
-    cargo
-    rustc
-    rust-analyzer
-    rustfmt
-    clippy
+    # pkg-config
+    # cargo
+    # rustc
+    # rust-analyzer
+    # rustfmt
+    # clippy
     # rustup
     gcc
     just
@@ -105,9 +105,12 @@ in {
     vscode-extensions.vadimcn.vscode-lldb.adapter
     file
     glow
+    difftastic
+    dust
 
     # Text Editors
     zed-editor
+    emacs29-pgtk
 
     # Web Browsers
     ungoogled-chromium
@@ -128,7 +131,6 @@ in {
     nchat
     neomutt
     element-desktop
-    cinny-desktop
 
     # Clipboard Management
     wl-clipboard
@@ -146,6 +148,7 @@ in {
 
     # Audio Tools
     pulsemixer
+    rmpc
 
     # Download Tools
     yt-dlp
@@ -154,6 +157,7 @@ in {
     lazygit
     libqalculate
     libnotify
+    ueberzugpp
 
     # Networking
     mitmproxy
