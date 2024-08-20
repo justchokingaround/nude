@@ -15,7 +15,12 @@ in
 
   programs.git = {
     enable = true;
-    delta.enable = true;
+    delta.enable = false;
+    difftastic = {
+        enable = true;
+        background = "dark";
+        display = "side-by-side-show-both";
+    };
 
     extraConfig = {
 
